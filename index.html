@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZELLIJ | T-shirts Homme</title>
+    <meta name="description" content="Collection de t-shirts ZELLIJ, inspiree par Casablanca et l'art marocain.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="announcement">
+      <span>Livraison offerte au Maroc des 900 MAD</span>
+      <button class="link-button" type="button" data-open-newsletter>Newsletter</button>
+    </div>
+
+    <header class="site-header">
+      <button class="icon-button menu-toggle" type="button" aria-label="Ouvrir le menu" data-open-menu>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="primary-nav" aria-label="Navigation principale">
+        <a href="#collection">Homme</a>
+        <a href="#collection">T-shirts</a>
+        <a href="#story">Journal</a>
+      </nav>
+      <a class="brand" href="#top" aria-label="ZELLIJ accueil">
+        <img src="assets/zellij-logo.png" alt="ZELLIJ">
+      </a>
+      <div class="header-actions">
+        <button class="link-button search-trigger" type="button" data-open-search>Recherche</button>
+        <button class="cart-button" type="button" data-open-cart>
+          Panier <span data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="collection-shell" id="collection" aria-labelledby="collection-title">
+        <div class="collection-heading">
+          <p class="breadcrumb">Accueil / Homme / T-shirts</p>
+          <div>
+            <h1 id="collection-title">T-shirts Homme</h1>
+            <p>
+              Pieces graphiques ZELLIJ inspirees par les villes marocaines, les motifs artisanaux et les coupes premium.
+            </p>
+          </div>
+          <button class="refine-button" type="button" data-open-filter>Refine</button>
+        </div>
+
+        <div class="toolbar" aria-label="Outils de collection">
+          <div class="category-tabs" role="list">
+            <button class="tab is-active" type="button">Tous</button>
+            <button class="tab" type="button">Nouveautes</button>
+            <button class="tab" type="button">Oversize</button>
+          </div>
+          <label class="sort-control">
+            Trier
+            <select data-sort>
+              <option value="featured">Selection</option>
+              <option value="price-asc">Prix croissant</option>
+              <option value="price-desc">Prix decroissant</option>
+              <option value="name">Nom</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="product-grid" data-product-grid aria-live="polite"></div>
+      </section>
+
+      <section class="lookbook" id="story" aria-label="Univers ZELLIJ">
+        <article class="lookbook-panel">
+          <img src="assets/morocco-casablanca-tee.png" alt="T-shirt Morocco Casablanca ZELLIJ montre de face et de dos">
+          <div>
+            <p class="eyebrow">Drop 01</p>
+            <h2>Morocco Casablanca</h2>
+            <p>
+              Un visuel architectural, une base ecrue et une signature ZELLIJ au col. Le premier article de la collection.
+            </p>
+            <a class="text-link" href="#collection">Voir l'article</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <img src="assets/zellij-logo.png" alt="ZELLIJ" class="footer-logo">
+        <p>Maison marocaine de streetwear graphique.</p>
+      </div>
+      <div>
+        <h2>Support</h2>
+        <a href="mailto:contact@zellij.store">Contact</a>
+        <a href="#shipping">Livraison & retours</a>
+        <a href="#sizes">Guide des tailles</a>
+      </div>
+      <div>
+        <h2>Newsletter</h2>
+        <form class="footer-form" data-newsletter-form>
+          <input type="email" name="email" placeholder="Email" aria-label="Email newsletter" required>
+          <button type="submit">OK</button>
+        </form>
+      </div>
+    </footer>
+
+    <aside class="drawer" data-menu aria-hidden="true">
+      <div class="drawer-panel">
+        <button class="drawer-close" type="button" data-close-menu aria-label="Fermer le menu">x</button>
+        <a href="#collection">Homme</a>
+        <a href="#collection">T-shirts</a>
+        <a href="#story">Journal</a>
+        <a href="#support">Support</a>
+      </div>
+    </aside>
+
+    <aside class="drawer" data-filter aria-hidden="true">
+      <div class="drawer-panel">
+        <button class="drawer-close" type="button" data-close-filter aria-label="Fermer les filtres">x</button>
+        <h2>Refine</h2>
+        <fieldset>
+          <legend>Taille</legend>
+          <label><input type="checkbox" value="S" data-size-filter> S</label>
+          <label><input type="checkbox" value="M" data-size-filter> M</label>
+          <label><input type="checkbox" value="L" data-size-filter> L</label>
+          <label><input type="checkbox" value="XL" data-size-filter> XL</label>
+        </fieldset>
+        <fieldset>
+          <legend>Couleur</legend>
+          <label><input type="checkbox" value="Ecru" data-color-filter> Ecru</label>
+        </fieldset>
+        <button class="solid-button" type="button" data-apply-filter>Appliquer</button>
+      </div>
+    </aside>
+
+    <aside class="drawer cart-drawer" data-cart aria-hidden="true">
+      <div class="drawer-panel">
+        <button class="drawer-close" type="button" data-close-cart aria-label="Fermer le panier">x</button>
+        <h2>Panier</h2>
+        <div class="cart-lines" data-cart-lines></div>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong data-cart-total>0 MAD</strong>
+        </div>
+        <button class="solid-button" type="button">Checkout</button>
+      </div>
+    </aside>
+
+    <div class="search-modal" data-search aria-hidden="true">
+      <div class="search-box">
+        <button class="drawer-close" type="button" data-close-search aria-label="Fermer la recherche">x</button>
+        <label>
+          Recherche
+          <input type="search" placeholder="Morocco, Casablanca, t-shirt..." data-search-input>
+        </label>
+      </div>
+    </div>
+
+    <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
