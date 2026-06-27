@@ -3,95 +3,109 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZELLIJ | T-shirts Homme</title>
-    <meta name="description" content="Collection de t-shirts ZELLIJ, inspiree par Casablanca et l'art marocain.">
+    <title>ZELLIJ | Morocco City Collection</title>
+    <meta name="description" content="ZELLIJ transforme les villes du Maroc en pieces streetwear pour une jeunesse fiere de sa culture.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="announcement">
+      <span>Drop 01: Morocco City Collection</span>
       <span>Livraison offerte au Maroc des 900 MAD</span>
-      <button class="link-button" type="button" data-open-newsletter>Newsletter</button>
     </div>
 
     <header class="site-header">
-      <button class="icon-button menu-toggle" type="button" aria-label="Ouvrir le menu" data-open-menu>
+      <button class="icon-button" type="button" aria-label="Ouvrir le menu" data-open-menu>
         <span></span>
         <span></span>
       </button>
       <nav class="primary-nav" aria-label="Navigation principale">
-        <a href="#collection">Homme</a>
-        <a href="#collection">T-shirts</a>
-        <a href="#story">Journal</a>
+        <a href="#cities">Villes</a>
+        <a href="#featured">Produit</a>
+        <a href="#manifesto">Manifesto</a>
       </nav>
       <a class="brand" href="#top" aria-label="ZELLIJ accueil">
         <img src="assets/zellij-logo.png" alt="ZELLIJ">
       </a>
       <div class="header-actions">
         <button class="link-button search-trigger" type="button" data-open-search>Recherche</button>
-        <button class="cart-button" type="button" data-open-cart>
-          Panier <span data-cart-count>0</span>
-        </button>
+        <button class="cart-button" type="button" data-open-cart>Panier <span data-cart-count>0</span></button>
       </div>
     </header>
 
     <main id="top">
-      <section class="collection-shell" id="collection" aria-labelledby="collection-title">
-        <div class="collection-heading">
-          <p class="breadcrumb">Accueil / Homme / T-shirts</p>
-          <div>
-            <h1 id="collection-title">T-shirts Homme</h1>
-            <p>
-              Pieces graphiques ZELLIJ inspirees par les villes marocaines, les motifs artisanaux et les coupes premium.
-            </p>
-          </div>
-          <button class="refine-button" type="button" data-open-filter>Refine</button>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/morocco-casablanca-tee.png" alt="">
         </div>
-
-        <div class="toolbar" aria-label="Outils de collection">
-          <div class="category-tabs" role="list">
-            <button class="tab is-active" type="button">Tous</button>
-            <button class="tab" type="button">Nouveautes</button>
-            <button class="tab" type="button">Oversize</button>
+        <div class="hero-content">
+          <p class="eyebrow">Streetwear marocain, pense pour le monde</p>
+          <h1 id="hero-title">ZELLIJ</h1>
+          <p>
+            Dix villes. Dix energies. Une collection qui porte l'architecture, les couleurs et la fierte marocaine sur un t-shirt premium.
+          </p>
+          <div class="hero-actions">
+            <a class="solid-link" href="#cities">Explorer les villes</a>
+            <a class="quiet-link" href="#featured">Voir Casablanca</a>
           </div>
-          <label class="sort-control">
-            Trier
-            <select data-sort>
-              <option value="featured">Selection</option>
-              <option value="price-asc">Prix croissant</option>
-              <option value="price-desc">Prix decroissant</option>
-              <option value="name">Nom</option>
-            </select>
-          </label>
         </div>
-
-        <div class="product-grid" data-product-grid aria-live="polite"></div>
+        <div class="hero-stats" aria-label="Collection">
+          <span>10 villes</span>
+          <span>1er drop</span>
+          <span>Culture graphique</span>
+        </div>
       </section>
 
-      <section class="lookbook" id="story" aria-label="Univers ZELLIJ">
-        <article class="lookbook-panel">
-          <img src="assets/morocco-casablanca-tee.png" alt="T-shirt Morocco Casablanca ZELLIJ montre de face et de dos">
-          <div>
-            <p class="eyebrow">Drop 01</p>
-            <h2>Morocco Casablanca</h2>
-            <p>
-              Un visuel architectural, une base ecrue et une signature ZELLIJ au col. Le premier article de la collection.
-            </p>
-            <a class="text-link" href="#collection">Voir l'article</a>
-          </div>
-        </article>
+      <section class="culture-band" id="manifesto" aria-label="Manifesto ZELLIJ">
+        <div>
+          <p class="eyebrow">Pourquoi ces couleurs</p>
+          <h2>Vert pour l'ancrage, terre cuite pour la chaleur, bleu pour l'ouverture.</h2>
+        </div>
+        <p>
+          ZELLIJ parle aux jeunes Marocains qui veulent porter leur histoire sans nostalgie lourde: du vert profond pour la confiance, des accents safran et argile pour l'energie, et un bleu Atlantique pour dire que cette culture voyage.
+        </p>
+      </section>
+
+      <section class="cities-section" id="cities" aria-labelledby="cities-title">
+        <div class="section-heading">
+          <p class="eyebrow">Collection des villes</p>
+          <h2 id="cities-title">Choisis ta ville</h2>
+          <p>Chaque rubrique deviendra une capsule avec ses photos, son t-shirt et son histoire. Casablanca est deja prete.</p>
+        </div>
+        <div class="city-rail" data-city-nav aria-label="Navigation par ville"></div>
+        <div class="city-grid" data-city-grid></div>
+      </section>
+
+      <section class="featured-product" id="featured" aria-labelledby="featured-title">
+        <div class="featured-copy">
+          <p class="eyebrow" data-selected-kicker>Ville active</p>
+          <h2 id="featured-title" data-selected-title>Casablanca</h2>
+          <p data-selected-story>
+            La ville blanche, le rythme urbain et l'architecture iconique. Le premier produit ZELLIJ rend hommage a Casablanca avec un visuel dos fort et une signature discrete cote coeur.
+          </p>
+          <div class="city-tags" data-selected-tags></div>
+        </div>
+        <article class="product-stage" data-selected-product></article>
+      </section>
+
+      <section class="drop-map" aria-label="Progression de la collection">
+        <div class="section-heading">
+          <p class="eyebrow">Drop system</p>
+          <h2>Une rubrique par ville, un lancement propre.</h2>
+        </div>
+        <div class="timeline" data-city-timeline></div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div>
         <img src="assets/zellij-logo.png" alt="ZELLIJ" class="footer-logo">
-        <p>Maison marocaine de streetwear graphique.</p>
+        <p>Pieces graphiques inspirees du Maroc, construites pour une generation globale.</p>
       </div>
       <div>
-        <h2>Support</h2>
-        <a href="mailto:contact@zellij.store">Contact</a>
-        <a href="#shipping">Livraison & retours</a>
-        <a href="#sizes">Guide des tailles</a>
+        <h2>Collection</h2>
+        <a href="#cities">Les 10 villes</a>
+        <a href="#featured">Casablanca</a>
+        <a href="#manifesto">Manifesto</a>
       </div>
       <div>
         <h2>Newsletter</h2>
@@ -105,29 +119,10 @@
     <aside class="drawer" data-menu aria-hidden="true">
       <div class="drawer-panel">
         <button class="drawer-close" type="button" data-close-menu aria-label="Fermer le menu">x</button>
-        <a href="#collection">Homme</a>
-        <a href="#collection">T-shirts</a>
-        <a href="#story">Journal</a>
-        <a href="#support">Support</a>
-      </div>
-    </aside>
-
-    <aside class="drawer" data-filter aria-hidden="true">
-      <div class="drawer-panel">
-        <button class="drawer-close" type="button" data-close-filter aria-label="Fermer les filtres">x</button>
-        <h2>Refine</h2>
-        <fieldset>
-          <legend>Taille</legend>
-          <label><input type="checkbox" value="S" data-size-filter> S</label>
-          <label><input type="checkbox" value="M" data-size-filter> M</label>
-          <label><input type="checkbox" value="L" data-size-filter> L</label>
-          <label><input type="checkbox" value="XL" data-size-filter> XL</label>
-        </fieldset>
-        <fieldset>
-          <legend>Couleur</legend>
-          <label><input type="checkbox" value="Ecru" data-color-filter> Ecru</label>
-        </fieldset>
-        <button class="solid-button" type="button" data-apply-filter>Appliquer</button>
+        <a href="#cities">Villes</a>
+        <a href="#featured">Produit</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#top">Accueil</a>
       </div>
     </aside>
 
@@ -149,8 +144,9 @@
         <button class="drawer-close" type="button" data-close-search aria-label="Fermer la recherche">x</button>
         <label>
           Recherche
-          <input type="search" placeholder="Morocco, Casablanca, t-shirt..." data-search-input>
+          <input type="search" placeholder="Casablanca, Fes, Dakhla..." data-search-input>
         </label>
+        <div class="search-results" data-search-results></div>
       </div>
     </div>
 
