@@ -69,7 +69,7 @@ button {
   align-items: center;
   padding: 12px clamp(18px, 4vw, 52px);
   border-bottom: 1px solid var(--line);
-  background: rgba(248, 246, 239, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
 }
 
