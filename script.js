@@ -1,11 +1,13 @@
 const cities = [...(window.ZELLIJ_CITIES || [])];
 const state = {
   selectedCity: cities[0],
+  cityPageIndex: 0,
   cart: []
 };
 
 const cityNav = document.querySelector("[data-city-nav]");
 const cityGrid = document.querySelector("[data-city-grid]");
+const cityPageShell = document.querySelector("[data-city-page-shell]");
 const timeline = document.querySelector("[data-city-timeline]");
 const selectedKicker = document.querySelector("[data-selected-kicker]");
 const selectedTitle = document.querySelector("[data-selected-title]");
@@ -45,7 +47,7 @@ function renderCityGrid() {
       <button type="button" data-select-city="${city.id}" aria-label="Voir la rubrique ${city.name}">
         <span class="city-number">${String(index + 1).padStart(2, "0")}</span>
         <span class="city-visual">
-          ${city.image ? `<img src="${city.image}" alt="T-shirt ${city.name} ZELLIJ">` : `<span>${city.arabic}</span>`}
+          ${city.photo || city.image ? `<img src="${city.photo || city.image}" alt="${city.name} Maroc">` : `<span>${city.arabic}</span>`}
         </span>
         <span class="city-meta">
           <strong>${city.name}</strong>
@@ -55,6 +57,44 @@ function renderCityGrid() {
       </button>
     </article>
   `).join("");
+}
+
+function renderCityPage() {
+  const city = cities[state.cityPageIndex];
+  const previous = cities[(state.cityPageIndex - 1 + cities.length) % cities.length];
+  const next = cities[(state.cityPageIndex + 1) % cities.length];
+
+  cityPageShell.innerHTML = `
+    <button class="page-arrow page-arrow-left" type="button" data-city-prev aria-label="Ville precedente">
+      <span aria-hidden="true">←</span>
+      <small>${previous.name}</small>
+    </button>
+    <article class="city-page" ${cityPattern(city)}>
+      <div class="city-page-photo">
+        <img src="${city.photo || city.image}" alt="${city.name} Maroc">
+      </div>
+      <div class="city-page-copy">
+        <p class="eyebrow">${String(state.cityPageIndex + 1).padStart(2, "0")} / ${cities.length} · ${city.region}</p>
+        <h3>${city.name}</h3>
+        <p class="city-page-arabic">${city.arabic}</p>
+        <h4>${city.pageTitle || city.story}</h4>
+        <p>${city.pageDescription || city.story}</p>
+        <div class="city-page-swatches" aria-label="Palette ${city.name}">
+          ${city.palette.map((color) => `<span style="background:${color}"></span>`).join("")}
+        </div>
+        <button class="solid-button city-page-cta" type="button" data-view-city="${city.id}">Voir la capsule</button>
+      </div>
+    </article>
+    <button class="page-arrow page-arrow-right" type="button" data-city-next aria-label="Ville suivante">
+      <span aria-hidden="true">→</span>
+      <small>${next.name}</small>
+    </button>
+    <div class="city-page-dots" aria-label="Pages des villes">
+      ${cities.map((item, index) => `
+        <button class="${index === state.cityPageIndex ? "is-active" : ""}" type="button" data-city-page-index="${index}" aria-label="Afficher ${item.name}"></button>
+      `).join("")}
+    </div>
+  `;
 }
 
 function renderTimeline() {
@@ -109,6 +149,11 @@ function renderSelectedCity() {
   }
 }
 
+function setCityPage(index) {
+  state.cityPageIndex = (index + cities.length) % cities.length;
+  renderCityPage();
+}
+
 function renderCart() {
   const total = state.cart.reduce((sum, item) => sum + item.price, 0);
   cartCount.textContent = state.cart.length;
@@ -150,6 +195,7 @@ function selectCity(cityId) {
   const city = cities.find((item) => item.id === cityId);
   if (!city) return;
   state.selectedCity = city;
+  state.cityPageIndex = cities.findIndex((item) => item.id === cityId);
   renderAll();
   document.querySelector("#featured").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -191,6 +237,7 @@ function showToast(message) {
 function renderAll() {
   renderCityNav();
   renderCityGrid();
+  renderCityPage();
   renderTimeline();
   renderSelectedCity();
 }
@@ -208,6 +255,10 @@ document.addEventListener("click", (event) => {
     openLayer("[data-search]");
   }
   if (target.matches("[data-close-search]")) closeLayer("[data-search]");
+  if (target.matches("[data-city-prev]")) setCityPage(state.cityPageIndex - 1);
+  if (target.matches("[data-city-next]")) setCityPage(state.cityPageIndex + 1);
+  if (target.matches("[data-city-page-index]")) setCityPage(Number(target.dataset.cityPageIndex));
+  if (target.matches("[data-view-city]")) selectCity(target.dataset.viewCity);
   if (target.matches("[data-select-city]")) selectCity(target.dataset.selectCity);
   if (target.matches("[data-add]")) addToCart(target.dataset.add, target.dataset.size);
   if (target.matches("[data-remove-cart]")) {
