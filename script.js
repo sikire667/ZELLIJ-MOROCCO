@@ -111,9 +111,14 @@ function renderCityPage() {
 function renderTimeline() {
   timeline.innerHTML = cities.map((city, index) => `
     <button class="timeline-item ${city.id === state.selectedCity.id ? "is-active" : ""}" type="button" data-select-city="${city.id}">
-      <span>${String(index + 1).padStart(2, "0")}</span>
-      <strong>${city.name}</strong>
-      <small>${city.status}</small>
+      <span class="timeline-number">${String(index + 1).padStart(2, "0")}</span>
+      <span class="timeline-product">
+        <img src="${city.image || city.photo}" alt="${city.name} T-shirt">
+      </span>
+      <span class="timeline-copy">
+        <strong>${city.name}</strong>
+        <small>${city.status}</small>
+      </span>
     </button>
   `).join("");
 }
