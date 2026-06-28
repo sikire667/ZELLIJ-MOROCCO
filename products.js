@@ -165,5 +165,18 @@ window.ZELLIJ_CITIES = [
     pageDescription: "Marrakech est la capsule la plus chaude: Koutoubia, palmiers, jardins, ocre et energie. Elle parle aux touristes comme aux Marocains, avec une force visuelle immediate.",
     product: makeProduct("marrakech", "Marrakech", "T-shirt ecru avec Koutoubia, jardins, palmiers et chaleur ocre."),
     story: "Marrakech est la capsule la plus intense: ocre, jardin, chaleur et energie."
+  },
+  {
+    id: "laayoune",
+    name: "Laayoune",
+    arabic: "\u0627\u0644\u0639\u064a\u0648\u0646",
+    region: "Sahara, dunes, horizon",
+    mood: "sable, vert profond, orange soleil",
+    palette: ["#0f4b3d", "#d69752", "#c85f2f"],
+    status: "Produit a venir",
+    photo: "assets/cities/laayoune.svg",
+    pageTitle: "Le souffle du Sahara, fier et lumineux.",
+    pageDescription: "Laayoune ajoute une energie saharienne a ZELLIJ: horizon large, sable chaud, palmiers et fierte du sud. Cette capsule parlera de territoire, de calme puissant et de presence marocaine.",
+    story: "Laayoune ouvrira la collection vers le Sahara: sable, horizon, fierte du sud et graphisme solaire."
   }
 ];

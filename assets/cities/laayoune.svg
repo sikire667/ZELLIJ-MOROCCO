@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Laayoune Morocco desert city">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5d891"/>
+      <stop offset="0.55" stop-color="#f0b864"/>
+      <stop offset="1" stop-color="#d88946"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8c27a"/>
+      <stop offset="1" stop-color="#b66a37"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e5948"/>
+      <stop offset="1" stop-color="#12362d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="935" cy="165" r="86" fill="#c85f2f"/>
+  <path d="M0 430 C160 350 290 475 455 390 C645 292 790 440 960 365 C1075 315 1140 328 1200 360 L1200 800 L0 800 Z" fill="url(#sand)"/>
+  <path d="M0 575 C170 510 305 615 515 548 C705 488 865 590 1200 508 L1200 800 L0 800 Z" fill="#d69752"/>
+  <path d="M0 668 C230 605 428 704 660 632 C820 582 1010 630 1200 592 L1200 800 L0 800 Z" fill="#b86638"/>
+  <g fill="url(#green)">
+    <rect x="272" y="375" width="105" height="222"/>
+    <rect x="387" y="330" width="92" height="267"/>
+    <rect x="492" y="402" width="86" height="195"/>
+    <path d="M388 330 L433 278 L479 330 Z"/>
+    <path d="M272 375 L325 324 L377 375 Z"/>
+    <path d="M492 402 L535 362 L578 402 Z"/>
+  </g>
+  <g stroke="#f4e6c7" stroke-width="10" fill="none" opacity="0.85">
+    <path d="M303 435 H349 M303 494 H349 M418 410 H448 M418 470 H448 M518 464 H552"/>
+    <path d="M312 568 H560"/>
+  </g>
+  <g fill="#103f35">
+    <path d="M794 610 C836 547 844 492 820 444 C875 494 875 558 842 626 Z"/>
+    <path d="M824 480 C766 468 724 488 695 535 C704 473 749 439 824 480 Z"/>
+    <path d="M828 483 C887 458 934 466 974 507 C907 500 865 516 828 483 Z"/>
+    <path d="M838 498 C891 532 914 576 903 633 C870 578 839 552 838 498 Z"/>
+    <rect x="816" y="492" width="28" height="180"/>
+  </g>
+  <rect x="64" y="64" width="1072" height="672" fill="none" stroke="#0f4b3d" stroke-width="14"/>
+  <rect x="96" y="96" width="1008" height="608" fill="none" stroke="#f6ead1" stroke-width="5" opacity="0.9"/>
+  <text x="600" y="705" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="76" letter-spacing="14" fill="#0f4b3d">LAAYOUNE</text>
+</svg>
