@@ -228,6 +228,42 @@ function renderCheckout() {
   orderTotalInput.value = `${totals.total} MAD`;
 }
 
+function buildCheckoutEmailBody(form) {
+  const data = new FormData(form);
+  const totals = getOrderTotals();
+  const lines = [
+    "Nouvelle commande ZELLIJ",
+    "",
+    "CLIENT",
+    `Prenom: ${data.get("first_name") || ""}`,
+    `Nom: ${data.get("last_name") || ""}`,
+    `Telephone: ${data.get("phone") || ""}`,
+    `WhatsApp: ${data.get("whatsapp") || ""}`,
+    `Email: ${data.get("email") || ""}`,
+    `Instagram: ${data.get("instagram") || ""}`,
+    "",
+    "LIVRAISON",
+    "Pays: Morocco",
+    `Adresse: ${data.get("street_address") || ""}`,
+    `Appartement: ${data.get("apartment") || ""}`,
+    `Ville: ${data.get("city") || ""}`,
+    `Region: ${data.get("state") || ""}`,
+    "",
+    "COMMANDE",
+    getOrderSummary(),
+    "",
+    `Sous-total: ${totals.subtotal} MAD`,
+    `Livraison: ${totals.shipping} MAD`,
+    `Total: ${totals.total} MAD`,
+    "Paiement: Cash on delivery",
+    "",
+    "NOTES",
+    data.get("order_notes") || ""
+  ];
+
+  return lines.join("\n");
+}
+
 function renderSearchResults(query = "") {
   const matches = cities.filter((city) => {
     const haystack = `${city.name} ${city.arabic} ${city.region} ${city.mood}`.toLowerCase();
@@ -333,13 +369,18 @@ document.addEventListener("click", (event) => {
 });
 
 checkoutForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
   if (!state.cart.length) {
-    event.preventDefault();
     showToast("Ton panier est vide");
     return;
   }
 
   renderCheckout();
+  const subject = encodeURIComponent("Nouvelle commande ZELLIJ");
+  const body = encodeURIComponent(buildCheckoutEmailBody(event.currentTarget));
+  window.location.href = `mailto:zellijmorocco@gmail.com?subject=${subject}&body=${body}`;
+  showToast("Email de commande prepare");
 });
 
 document.querySelector("[data-newsletter-form]").addEventListener("submit", (event) => {
