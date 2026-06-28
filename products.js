@@ -173,10 +173,12 @@ window.ZELLIJ_CITIES = [
     region: "Sahara, dunes, horizon",
     mood: "sable, vert profond, orange soleil",
     palette: ["#0f4b3d", "#d69752", "#c85f2f"],
-    status: "Produit a venir",
+    status: "Disponible",
+    image: "assets/products/laayoune-tee.png",
     photo: "assets/cities/laayoune.svg",
     pageTitle: "Le souffle du Sahara, fier et lumineux.",
-    pageDescription: "Laayoune ajoute une energie saharienne a ZELLIJ: horizon large, sable chaud, palmiers et fierte du sud. Cette capsule parlera de territoire, de calme puissant et de presence marocaine.",
-    story: "Laayoune ouvrira la collection vers le Sahara: sable, horizon, fierte du sud et graphisme solaire."
+    pageDescription: "Laayoune ajoute une energie saharienne a ZELLIJ: horizon large, sable chaud, palmiers et fierte du sud. Cette capsule parle de territoire, de calme puissant et de presence marocaine.",
+    product: makeProduct("laayoune", "Laayoune", "T-shirt ecru avec dunes, horizon saharien et lumiere chaude du sud marocain."),
+    story: "Laayoune ouvre la collection vers le Sahara: sable, horizon, fierte du sud et graphisme solaire."
   }
 ];

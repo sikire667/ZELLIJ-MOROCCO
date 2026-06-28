@@ -9,5 +9,5 @@
   { "id": "agadir", "name": "Agadir", "status": "Disponible", "image": "assets/products/agadir-tee.png", "price": 490 },
   { "id": "dakhla", "name": "Dakhla", "status": "Disponible", "image": "assets/products/dakhla-tee.png", "price": 490 },
   { "id": "marrakech", "name": "Marrakech", "status": "Disponible", "image": "assets/products/marrakech-tee.png", "price": 490 },
-  { "id": "laayoune", "name": "Laayoune", "status": "Produit a venir", "image": "assets/cities/laayoune.svg" }
+  { "id": "laayoune", "name": "Laayoune", "status": "Disponible", "image": "assets/products/laayoune-tee.png", "price": 490 }
 ]
