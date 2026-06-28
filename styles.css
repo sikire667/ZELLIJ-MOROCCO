@@ -69,7 +69,7 @@ button {
   align-items: center;
   padding: 12px clamp(18px, 4vw, 52px);
   border-bottom: 1px solid var(--line);
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .primary-nav,
@@ -89,7 +89,7 @@ button {
   display: block;
   width: clamp(145px, 15vw, 220px);
   height: auto;
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .link-button,
