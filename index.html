@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="apple-touch-icon" href="assets/favicon.png">
-    <link rel="stylesheet" href="styles.css?v=laayoune-photo-1">
+    <link rel="stylesheet" href="styles.css?v=checkout-1">
   </head>
   <body>
     <div class="announcement">
@@ -131,7 +131,109 @@
           <span>Total</span>
           <strong data-cart-total>0 MAD</strong>
         </div>
-        <button class="solid-button" type="button">Checkout</button>
+        <button class="solid-button" type="button" data-open-checkout>Checkout</button>
+      </div>
+    </aside>
+
+    <aside class="checkout-modal" data-checkout aria-hidden="true">
+      <div class="checkout-panel">
+        <button class="drawer-close" type="button" data-close-checkout aria-label="Fermer checkout">x</button>
+        <form class="checkout-layout" action="https://formsubmit.co/zellijmorocco@gmail.com" method="POST" data-checkout-form>
+          <input type="hidden" name="_subject" value="Nouvelle commande ZELLIJ">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://sikire667.github.io/ZELLIJ-MOROCCO/?order=sent">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="form-honey">
+          <input type="hidden" name="order_items" data-order-items>
+          <input type="hidden" name="subtotal_mad" data-order-subtotal>
+          <input type="hidden" name="shipping_mad" data-order-shipping>
+          <input type="hidden" name="total_mad" data-order-total>
+          <input type="hidden" name="payment_method" value="Cash on delivery">
+
+          <section class="checkout-fields" aria-labelledby="checkout-title">
+            <h2 id="checkout-title">Billing &amp; Shipping</h2>
+            <div class="checkout-row">
+              <label>First name <span>(الاسم)</span> *
+                <input type="text" name="first_name" autocomplete="given-name" required>
+              </label>
+              <label>Last name <span>(الكنية)</span> *
+                <input type="text" name="last_name" autocomplete="family-name" required>
+              </label>
+            </div>
+            <label class="checkout-static">Country / Region
+              <strong>Morocco</strong>
+              <input type="hidden" name="country" value="Morocco">
+            </label>
+            <label>Street address <span>(العنوان)</span> *
+              <input type="text" name="street_address" placeholder="House number and street name" autocomplete="address-line1" required>
+            </label>
+            <label>
+              <input type="text" name="apartment" placeholder="Apartment, suite, unit, etc. (optional)" autocomplete="address-line2">
+            </label>
+            <label>Town / City <span>(المدينة)</span> *
+              <input type="text" name="city" autocomplete="address-level2" required>
+            </label>
+            <label>State / County
+              <select name="state">
+                <option>Agadir-Ida Ou Tanane</option>
+                <option>Casablanca</option>
+                <option>Rabat</option>
+                <option>Tanger-Assilah</option>
+                <option>Fes</option>
+                <option>Marrakech</option>
+                <option>Essaouira</option>
+                <option>Dakhla-Oued Ed-Dahab</option>
+                <option>Laayoune-Sakia El Hamra</option>
+                <option>Autre ville au Maroc</option>
+              </select>
+            </label>
+            <label>Phone <span>(رقم الهاتف)</span> *
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+            <label>WhatsApp <span>(رقم واتساب)</span> *
+              <input type="tel" name="whatsapp" required>
+            </label>
+            <label>Email address <span>(البريد الإلكتروني)</span> *
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>Instagram Username *
+              <input type="text" name="instagram" placeholder="@username" required>
+            </label>
+            <h2>Additional information</h2>
+            <label>Order notes
+              <textarea name="order_notes" rows="4" placeholder="Notes about your order, delivery time, size preference..."></textarea>
+            </label>
+          </section>
+
+          <aside class="checkout-order" aria-label="Your order">
+            <h2>Your order</h2>
+            <div class="order-table">
+              <div class="order-head">
+                <span>Product</span>
+                <span>Subtotal</span>
+              </div>
+              <div data-checkout-lines></div>
+              <div class="order-row">
+                <span>Subtotal</span>
+                <strong data-checkout-subtotal>0 MAD</strong>
+              </div>
+              <div class="order-row">
+                <span>Shipping</span>
+                <strong data-checkout-shipping>35 MAD</strong>
+              </div>
+              <div class="order-row order-total-row">
+                <span>Total</span>
+                <strong data-checkout-total>0 MAD</strong>
+              </div>
+            </div>
+            <div class="cod-box">
+              <strong>Cash on delivery <span>ما تخلص حتى توصلك</span></strong>
+              <p>Pay with cash upon delivery.</p>
+            </div>
+            <button class="place-order" type="submit">PLACER ORDER <span>خلص</span></button>
+            <p class="checkout-note">Les informations seront envoyees a zellijmorocco@gmail.com.</p>
+          </aside>
+        </form>
       </div>
     </aside>
 
@@ -148,7 +250,7 @@
 
     <div class="toast" data-toast role="status" aria-live="polite"></div>
 
-    <script src="products.js?v=laayoune-photo-1"></script>
-    <script src="script.js?v=laayoune-photo-1"></script>
+    <script src="products.js?v=checkout-1"></script>
+    <script src="script.js?v=checkout-1"></script>
   </body>
 </html>

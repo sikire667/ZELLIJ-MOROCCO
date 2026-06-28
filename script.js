@@ -19,6 +19,17 @@ const cartLines = document.querySelector("[data-cart-lines]");
 const cartTotal = document.querySelector("[data-cart-total]");
 const toast = document.querySelector("[data-toast]");
 const searchResults = document.querySelector("[data-search-results]");
+const checkoutLines = document.querySelector("[data-checkout-lines]");
+const checkoutSubtotal = document.querySelector("[data-checkout-subtotal]");
+const checkoutShipping = document.querySelector("[data-checkout-shipping]");
+const checkoutTotal = document.querySelector("[data-checkout-total]");
+const orderItemsInput = document.querySelector("[data-order-items]");
+const orderSubtotalInput = document.querySelector("[data-order-subtotal]");
+const orderShippingInput = document.querySelector("[data-order-shipping]");
+const orderTotalInput = document.querySelector("[data-order-total]");
+const checkoutForm = document.querySelector("[data-checkout-form]");
+const SHIPPING_FEE = 35;
+const FREE_SHIPPING_MINIMUM = 900;
 
 function formatMoney(value, currency) {
   return new Intl.NumberFormat("fr-MA", {
@@ -177,6 +188,41 @@ function renderCart() {
   `).join("");
 }
 
+function getOrderTotals() {
+  const subtotal = state.cart.reduce((sum, item) => sum + item.price, 0);
+  const shipping = subtotal >= FREE_SHIPPING_MINIMUM || subtotal === 0 ? 0 : SHIPPING_FEE;
+  return {
+    subtotal,
+    shipping,
+    total: subtotal + shipping
+  };
+}
+
+function getOrderSummary() {
+  return state.cart.map((item, index) => {
+    return `${index + 1}. ${item.name} - ${item.city} - Taille ${item.size} x1 - ${formatMoney(item.price, item.currency)}`;
+  }).join("\n");
+}
+
+function renderCheckout() {
+  const totals = getOrderTotals();
+
+  checkoutLines.innerHTML = state.cart.map((item) => `
+    <div class="order-product">
+      <span>${item.name}<small>${item.city} / Taille ${item.size} x 1</small></span>
+      <strong>${formatMoney(item.price, item.currency)}</strong>
+    </div>
+  `).join("");
+
+  checkoutSubtotal.textContent = formatMoney(totals.subtotal, "MAD");
+  checkoutShipping.textContent = totals.shipping ? `Flat rate: ${formatMoney(totals.shipping, "MAD")}` : "Free";
+  checkoutTotal.textContent = formatMoney(totals.total, "MAD");
+  orderItemsInput.value = getOrderSummary();
+  orderSubtotalInput.value = `${totals.subtotal} MAD`;
+  orderShippingInput.value = `${totals.shipping} MAD`;
+  orderTotalInput.value = `${totals.total} MAD`;
+}
+
 function renderSearchResults(query = "") {
   const matches = cities.filter((city) => {
     const haystack = `${city.name} ${city.arabic} ${city.region} ${city.mood}`.toLowerCase();
@@ -250,6 +296,16 @@ document.addEventListener("click", (event) => {
   if (target.matches("[data-close-menu]")) closeLayer("[data-menu]");
   if (target.matches("[data-open-cart]")) openLayer("[data-cart]");
   if (target.matches("[data-close-cart]")) closeLayer("[data-cart]");
+  if (target.matches("[data-open-checkout]")) {
+    if (!state.cart.length) {
+      showToast("Ajoute un article avant le checkout");
+      return;
+    }
+    renderCheckout();
+    closeLayer("[data-cart]");
+    openLayer("[data-checkout]");
+  }
+  if (target.matches("[data-close-checkout]")) closeLayer("[data-checkout]");
   if (target.matches("[data-open-search], [data-open-newsletter]")) {
     renderSearchResults();
     openLayer("[data-search]");
@@ -264,7 +320,21 @@ document.addEventListener("click", (event) => {
   if (target.matches("[data-remove-cart]")) {
     state.cart.splice(Number(target.dataset.removeCart), 1);
     renderCart();
+    if (document.querySelector("[data-checkout]").classList.contains("is-open")) {
+      if (state.cart.length) renderCheckout();
+      else closeLayer("[data-checkout]");
+    }
   }
+});
+
+checkoutForm.addEventListener("submit", (event) => {
+  if (!state.cart.length) {
+    event.preventDefault();
+    showToast("Ton panier est vide");
+    return;
+  }
+
+  renderCheckout();
 });
 
 document.querySelector("[data-newsletter-form]").addEventListener("submit", (event) => {
@@ -279,4 +349,5 @@ document.querySelector("[data-search-input]").addEventListener("input", (event) 
 
 renderAll();
 renderCart();
+renderCheckout();
 renderSearchResults();
