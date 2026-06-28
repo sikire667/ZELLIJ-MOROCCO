@@ -379,8 +379,9 @@ h1 {
 
 .city-page-arabic {
   margin: 10px 0 22px;
-  color: color-mix(in srgb, var(--city-b) 86%, white);
+  color: #fffdf7;
   font-size: clamp(24px, 3.5vw, 42px);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
 .city-page-copy h4 {

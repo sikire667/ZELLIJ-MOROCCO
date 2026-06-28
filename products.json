@@ -4,7 +4,7 @@
   { "id": "tanger", "name": "Tanger", "status": "Disponible", "image": "assets/products/tanger-tee.png", "price": 490 },
   { "id": "kettama", "name": "Kettama", "status": "Disponible", "image": "assets/products/kettama-tee.png", "price": 490 },
   { "id": "fes", "name": "Fes", "status": "Disponible", "image": "assets/products/fes-tee.png", "price": 490 },
-  { "id": "chaouenne", "name": "Chaouenne", "status": "Disponible", "image": "assets/products/chaouenne-tee.png", "price": 490 },
+  { "id": "chaouenne", "name": "Chefchaouen", "status": "Disponible", "image": "assets/products/chaouenne-tee.png", "price": 490 },
   { "id": "rabat", "name": "Rabat", "status": "Disponible", "image": "assets/products/rabat-tee.png", "price": 490 },
   { "id": "agadir", "name": "Agadir", "status": "Disponible", "image": "assets/products/agadir-tee.png", "price": 490 },
   { "id": "dakhla", "name": "Dakhla", "status": "Disponible", "image": "assets/products/dakhla-tee.png", "price": 490 },

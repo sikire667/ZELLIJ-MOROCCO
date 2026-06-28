@@ -93,7 +93,7 @@ window.ZELLIJ_CITIES = [
   },
   {
     id: "chaouenne",
-    name: "Chaouenne",
+    name: "Chefchaouen",
     arabic: "\u0634\u0641\u0634\u0627\u0648\u0646",
     region: "Bleu, ruelles, calme",
     mood: "bleu clair, indigo, blanc",
@@ -102,8 +102,8 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/chaouenne-tee.png",
     photo: "assets/cities/chaouenne.jpg",
     pageTitle: "Le bleu calme qui reste en memoire.",
-    pageDescription: "Chaouenne donne a la collection une respiration: ruelles bleues, lumiere douce et silence visuel. C'est la capsule de l'apaisement, mais avec une presence immediate.",
-    product: makeProduct("chaouenne", "Chaouenne", "T-shirt ecru avec ruelles bleues, escaliers et lumiere douce du nord."),
+    pageDescription: "Chefchaouen donne a la collection une respiration: ruelles bleues, lumiere douce et silence visuel. C'est la capsule de l'apaisement, mais avec une presence immediate.",
+    product: makeProduct("chaouenne", "Chefchaouen", "T-shirt ecru avec ruelles bleues, escaliers et lumiere douce du nord."),
     story: "Une capsule douce et tres visuelle autour du bleu, des ruelles et de la lumiere du nord."
   },
   {
