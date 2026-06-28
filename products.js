@@ -175,7 +175,7 @@ window.ZELLIJ_CITIES = [
     palette: ["#0f4b3d", "#d69752", "#c85f2f"],
     status: "Disponible",
     image: "assets/products/laayoune-tee.png",
-    photo: "assets/cities/laayoune.svg",
+    photo: "assets/cities/laayoune.jpg",
     pageTitle: "Le souffle du Sahara, fier et lumineux.",
     pageDescription: "Laayoune ajoute une energie saharienne a ZELLIJ: horizon large, sable chaud, palmiers et fierte du sud. Cette capsule parle de territoire, de calme puissant et de presence marocaine.",
     product: makeProduct("laayoune", "Laayoune", "T-shirt ecru avec dunes, horizon saharien et lumiere chaude du sud marocain."),
