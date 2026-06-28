@@ -283,34 +283,18 @@ h1 {
   overflow: hidden;
   display: grid;
   align-items: stretch;
-  color: var(--white);
-  background:
-    radial-gradient(circle at 88% 18%, rgba(214, 161, 58, 0.15), transparent 28%),
-    linear-gradient(135deg, #0d2a22, var(--ink));
+  color: var(--ink);
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .culture-band::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.16;
-  background:
-    linear-gradient(45deg, transparent 47%, rgba(255,255,255,0.22) 48% 52%, transparent 53%),
-    linear-gradient(-45deg, transparent 47%, rgba(255,255,255,0.14) 48% 52%, transparent 53%);
-  background-size: 56px 56px;
-  pointer-events: none;
+  display: none;
 }
 
 .culture-band::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  right: clamp(18px, 5vw, 80px);
-  bottom: -96px;
-  border: 1px solid rgba(255,255,255,0.18);
-  transform: rotate(45deg);
-  pointer-events: none;
+  display: none;
 }
 
 .section-heading h2,
