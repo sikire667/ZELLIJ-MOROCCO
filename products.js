@@ -1,3 +1,20 @@
+const sharedProduct = {
+  price: 490,
+  currency: "MAD",
+  color: "Ecru",
+  sizes: ["S", "M", "L", "XL"],
+  details: ["Coupe decontractee", "Coton premium 240 gsm", "Impression graphique avant et dos"]
+};
+
+function makeProduct(id, city, description) {
+  return {
+    id: `morocco-${id}-tee`,
+    name: `Morocco ${city} T-shirt`,
+    ...sharedProduct,
+    description
+  };
+}
+
 window.ZELLIJ_CITIES = [
   {
     id: "casablanca",
@@ -7,21 +24,12 @@ window.ZELLIJ_CITIES = [
     mood: "blanc, vert profond, orange coucher de soleil",
     palette: ["#0f4b3d", "#e7ded1", "#c86436"],
     status: "Disponible",
-    image: "assets/morocco-casablanca-tee.png",
+    image: "assets/products/casablanca-tee.png",
     photo: "assets/cities/casablanca.jpg",
     pageTitle: "La ville blanche, l'energie qui ne dort jamais.",
     pageDescription: "Casablanca represente le Maroc moderne: business, ocean, mosquee Hassan II et rythme urbain. Pour ZELLIJ, c'est la ville du depart, celle qui transforme la fierte culturelle en piece forte du quotidien.",
-    product: {
-      id: "morocco-casablanca-tee",
-      name: "Morocco Casablanca T-shirt",
-      price: 490,
-      currency: "MAD",
-      color: "Ecru",
-      sizes: ["S", "M", "L", "XL"],
-      description: "T-shirt ecru avec visuel Casablanca au dos, logo ZELLIJ au col et impression coeur cote face.",
-      details: ["Coupe decontractee", "Coton premium 240 gsm", "Impression graphique avant et dos"]
-    },
-    story: "La ville blanche, le rythme urbain et l'architecture iconique. Le premier produit ZELLIJ rend hommage a Casablanca avec un visuel dos fort et une signature discrete cote coeur."
+    product: makeProduct("casablanca", "Casablanca", "T-shirt ecru avec visuel Casablanca au dos, logo ZELLIJ au col et impression coeur cote face."),
+    story: "La ville blanche, le rythme urbain et l'architecture iconique. Une piece forte pour ceux qui portent Casablanca comme une energie."
   },
   {
     id: "essaouira",
@@ -30,10 +38,12 @@ window.ZELLIJ_CITIES = [
     region: "Vent, remparts, Atlantique",
     mood: "bleu ocean, pierre claire, bois chaud",
     palette: ["#1c6d7a", "#f3f0e9", "#b17443"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/essaouira-tee.png",
     photo: "assets/cities/essaouira.jpg",
     pageTitle: "La ville du vent, libre et lumineuse.",
-    pageDescription: "Essaouira apporte une energie plus douce: remparts, ocean, musique, artisans et horizon. La capsule doit sentir la liberte, le bleu sale de la mer et la chaleur du bois des anciennes ruelles.",
+    pageDescription: "Essaouira apporte une energie plus douce: remparts, ocean, musique, artisans et horizon. La capsule sent la liberte, le bleu sale de la mer et la chaleur du bois des anciennes ruelles.",
+    product: makeProduct("essaouira", "Essaouira", "T-shirt ecru avec remparts, vagues atlantiques et soleil chaud pour une capsule libre et lumineuse."),
     story: "Une capsule pensee autour du vent, des remparts et de l'esprit libre de la cote."
   },
   {
@@ -43,11 +53,13 @@ window.ZELLIJ_CITIES = [
     region: "Mediterranee, passage, nuit",
     mood: "bleu nuit, blanc portuaire, rouge signal",
     palette: ["#183b59", "#f6f4ee", "#bf3f32"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/tanger-tee.png",
     photo: "assets/cities/tanger.jpg",
     pageTitle: "La porte du nord, entre deux mers.",
     pageDescription: "Tanger est une ville de passage et de melange: port, falaise, cafe, voyage et mouvement. ZELLIJ la traduit comme une capsule ouverte sur le monde, elegante et un peu nocturne.",
-    story: "Tanger comme point de passage: europe, afrique, mer et mouvement."
+    product: makeProduct("tanger", "Tanger", "T-shirt ecru inspire du phare, de la cote et de l'esprit voyageur de Tanger."),
+    story: "Tanger comme point de passage: Europe, Afrique, mer et mouvement."
   },
   {
     id: "kettama",
@@ -56,10 +68,12 @@ window.ZELLIJ_CITIES = [
     region: "Rif, montagne, brume",
     mood: "vert foret, brume, terre sombre",
     palette: ["#234b37", "#dfe7df", "#6a5540"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/kettama-tee.png",
     photo: "assets/cities/kettama.jpg",
     pageTitle: "Le Rif profond, calme et mysterieux.",
     pageDescription: "Kettama porte une autre image du Maroc: montagne, vert intense, silence, terre et relief. C'est une rubrique plus brute, plus organique, construite autour de la nature et de la memoire du Rif.",
+    product: makeProduct("kettama", "Kettama", "T-shirt ecru avec paysage du Rif, verts profonds et composition organique."),
     story: "Une ville-rubrique plus mystique, construite autour du Rif, du relief et de la nature."
   },
   {
@@ -69,11 +83,13 @@ window.ZELLIJ_CITIES = [
     region: "Medina, savoir-faire, heritage",
     mood: "vert zellige, cuivre, ivoire",
     palette: ["#0d5a47", "#bc7d3f", "#f7f1e6"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/fes-tee.png",
     photo: "assets/cities/fes.jpg",
     pageTitle: "La capitale du detail et du savoir-faire.",
     pageDescription: "Fes, c'est l'artisanat, les portes monumentales, la medina et le geste transmis. Pour ZELLIJ, cette ville donne la profondeur: motifs, patience, heritage et precision graphique.",
-    story: "Fes portera l'artisanat, le detail et la profondeur historique de la medina."
+    product: makeProduct("fes", "Fes", "T-shirt ecru avec porte monumentale, medina et accents cuivre pour l'heritage artisanal."),
+    story: "Fes porte l'artisanat, le detail et la profondeur historique de la medina."
   },
   {
     id: "chaouenne",
@@ -82,10 +98,12 @@ window.ZELLIJ_CITIES = [
     region: "Bleu, ruelles, calme",
     mood: "bleu clair, indigo, blanc",
     palette: ["#4d9ac7", "#24456f", "#f5f7f5"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/chaouenne-tee.png",
     photo: "assets/cities/chaouenne.jpg",
     pageTitle: "Le bleu calme qui reste en memoire.",
     pageDescription: "Chaouenne donne a la collection une respiration: ruelles bleues, lumiere douce et silence visuel. C'est la capsule de l'apaisement, mais avec une presence immediate.",
+    product: makeProduct("chaouenne", "Chaouenne", "T-shirt ecru avec ruelles bleues, escaliers et lumiere douce du nord."),
     story: "Une capsule douce et tres visuelle autour du bleu, des ruelles et de la lumiere du nord."
   },
   {
@@ -95,11 +113,13 @@ window.ZELLIJ_CITIES = [
     region: "Capitale, lignes propres",
     mood: "vert institution, sable clair, rouge drapeau",
     palette: ["#174f43", "#e9dfcf", "#b93531"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/rabat-tee.png",
     photo: "assets/cities/rabat.jpg",
     pageTitle: "La capitale calme, droite et elegante.",
     pageDescription: "Rabat est plus minimaliste: Tour Hassan, lignes nettes, institutions, jardins et ocean proche. Dans ZELLIJ, elle devient une capsule propre, equilibree et mature.",
-    story: "Rabat sera plus minimaliste: lignes nettes, capitale calme, culture institutionnelle."
+    product: makeProduct("rabat", "Rabat", "T-shirt ecru avec Tour Hassan, lignes calmes et palette verte institutionnelle."),
+    story: "Rabat est plus minimaliste: lignes nettes, capitale calme, culture institutionnelle."
   },
   {
     id: "agadir",
@@ -108,10 +128,12 @@ window.ZELLIJ_CITIES = [
     region: "Soleil, plage, sud",
     mood: "jaune soleil, bleu plage, argile",
     palette: ["#d59a2f", "#2d7890", "#c96b3b"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/agadir-tee.png",
     photo: "assets/cities/agadir.jpg",
     pageTitle: "Le sud solaire, simple et direct.",
     pageDescription: "Agadir apporte la lumiere, la plage et une energie plus sportive. C'est une ville facile a porter: chaude, positive, jeune, avec un imaginaire de vacances et de mouvement.",
+    product: makeProduct("agadir", "Agadir", "T-shirt ecru avec baie d'Agadir, soleil du sud et relief de la kasbah."),
     story: "Une capsule chaude et solaire, pensee pour l'energie du sud et la vie de plage."
   },
   {
@@ -121,11 +143,13 @@ window.ZELLIJ_CITIES = [
     region: "Lagune, desert, horizon",
     mood: "turquoise, sable, bleu profond",
     palette: ["#1f9ba5", "#e4c88c", "#12344f"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/dakhla-tee.png",
     photo: "assets/cities/dakhla.png",
     pageTitle: "La lagune, le desert et l'horizon.",
     pageDescription: "Dakhla donne une dimension internationale a ZELLIJ: kitesurf, lagune turquoise, sable et liberte. C'est la capsule du voyage, du sport et des grands espaces.",
-    story: "Dakhla parlera d'horizon, de sport, de lagune et de desert sans fin."
+    product: makeProduct("dakhla", "Dakhla", "T-shirt ecru avec lagune, kitesurf, palmiers et horizon desertique."),
+    story: "Dakhla parle d'horizon, de sport, de lagune et de desert sans fin."
   },
   {
     id: "marrakech",
@@ -134,10 +158,12 @@ window.ZELLIJ_CITIES = [
     region: "Ocre, jardins, intensite",
     mood: "ocre rouge, vert jardin, or",
     palette: ["#b34f35", "#23533d", "#c59b4c"],
-    status: "Photos ajoutees",
+    status: "Disponible",
+    image: "assets/products/marrakech-tee.png",
     photo: "assets/cities/marrakech.jpg",
     pageTitle: "L'ocre, les jardins et l'intensite.",
     pageDescription: "Marrakech est la capsule la plus chaude: Koutoubia, palmiers, jardins, ocre et energie. Elle parle aux touristes comme aux Marocains, avec une force visuelle immediate.",
-    story: "Marrakech sera la capsule la plus intense: ocre, jardin, chaleur et energie."
+    product: makeProduct("marrakech", "Marrakech", "T-shirt ecru avec Koutoubia, jardins, palmiers et chaleur ocre."),
+    story: "Marrakech est la capsule la plus intense: ocre, jardin, chaleur et energie."
   }
 ];

@@ -1,25 +1,12 @@
 [
-  {
-    "id": "casablanca",
-    "name": "Casablanca",
-    "arabic": "الدار البيضاء",
-    "status": "Disponible",
-    "image": "assets/morocco-casablanca-tee.png",
-    "product": {
-      "id": "morocco-casablanca-tee",
-      "name": "Morocco Casablanca T-shirt",
-      "price": 490,
-      "currency": "MAD",
-      "sizes": ["S", "M", "L", "XL"]
-    }
-  },
-  { "id": "essaouira", "name": "Essaouira", "arabic": "الصويرة", "status": "Photos a venir" },
-  { "id": "tanger", "name": "Tanger", "arabic": "طنجة", "status": "Photos a venir" },
-  { "id": "kettama", "name": "Kettama", "arabic": "كتامة", "status": "Photos a venir" },
-  { "id": "fes", "name": "Fes", "arabic": "فاس", "status": "Photos a venir" },
-  { "id": "chaouenne", "name": "Chaouenne", "arabic": "شفشاون", "status": "Photos a venir" },
-  { "id": "rabat", "name": "Rabat", "arabic": "الرباط", "status": "Photos a venir" },
-  { "id": "agadir", "name": "Agadir", "arabic": "أكادير", "status": "Photos a venir" },
-  { "id": "dakhla", "name": "Dakhla", "arabic": "الداخلة", "status": "Photos a venir" },
-  { "id": "marrakech", "name": "Marrakech", "arabic": "مراكش", "status": "Photos a venir" }
+  { "id": "casablanca", "name": "Casablanca", "status": "Disponible", "image": "assets/products/casablanca-tee.png", "price": 490 },
+  { "id": "essaouira", "name": "Essaouira", "status": "Disponible", "image": "assets/products/essaouira-tee.png", "price": 490 },
+  { "id": "tanger", "name": "Tanger", "status": "Disponible", "image": "assets/products/tanger-tee.png", "price": 490 },
+  { "id": "kettama", "name": "Kettama", "status": "Disponible", "image": "assets/products/kettama-tee.png", "price": 490 },
+  { "id": "fes", "name": "Fes", "status": "Disponible", "image": "assets/products/fes-tee.png", "price": 490 },
+  { "id": "chaouenne", "name": "Chaouenne", "status": "Disponible", "image": "assets/products/chaouenne-tee.png", "price": 490 },
+  { "id": "rabat", "name": "Rabat", "status": "Disponible", "image": "assets/products/rabat-tee.png", "price": 490 },
+  { "id": "agadir", "name": "Agadir", "status": "Disponible", "image": "assets/products/agadir-tee.png", "price": 490 },
+  { "id": "dakhla", "name": "Dakhla", "status": "Disponible", "image": "assets/products/dakhla-tee.png", "price": 490 },
+  { "id": "marrakech", "name": "Marrakech", "status": "Disponible", "image": "assets/products/marrakech-tee.png", "price": 490 }
 ]

@@ -66,7 +66,7 @@ function renderCityPage() {
 
   cityPageShell.innerHTML = `
     <button class="page-arrow page-arrow-left" type="button" data-city-prev aria-label="Ville precedente">
-      <span aria-hidden="true">←</span>
+      <span aria-hidden="true">&#8592;</span>
       <small>${previous.name}</small>
     </button>
     <article class="city-page" ${cityPattern(city)}>
@@ -74,7 +74,7 @@ function renderCityPage() {
         <img src="${city.photo || city.image}" alt="${city.name} Maroc">
       </div>
       <div class="city-page-copy">
-        <p class="eyebrow">${String(state.cityPageIndex + 1).padStart(2, "0")} / ${cities.length} · ${city.region}</p>
+        <p class="eyebrow">${String(state.cityPageIndex + 1).padStart(2, "0")} / ${cities.length} &middot; ${city.region}</p>
         <h3>${city.name}</h3>
         <p class="city-page-arabic">${city.arabic}</p>
         <h4>${city.pageTitle || city.story}</h4>
@@ -86,7 +86,7 @@ function renderCityPage() {
       </div>
     </article>
     <button class="page-arrow page-arrow-right" type="button" data-city-next aria-label="Ville suivante">
-      <span aria-hidden="true">→</span>
+      <span aria-hidden="true">&#8594;</span>
       <small>${next.name}</small>
     </button>
     <div class="city-page-dots" aria-label="Pages des villes">
