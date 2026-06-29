@@ -28,6 +28,7 @@ const orderSubtotalInput = document.querySelector("[data-order-subtotal]");
 const orderShippingInput = document.querySelector("[data-order-shipping]");
 const orderTotalInput = document.querySelector("[data-order-total]");
 const checkoutForm = document.querySelector("[data-checkout-form]");
+const featuredSection = document.querySelector("#featured");
 const SHIPPING_FEE = 35;
 const FREE_SHIPPING_MINIMUM = 900;
 
@@ -80,7 +81,7 @@ function renderCityPage() {
       <span aria-hidden="true">&#8592;</span>
       <small>${previous.name}</small>
     </button>
-    <article class="city-page" ${cityPattern(city)}>
+    <article class="city-page" ${cityPattern(city)} data-view-city="${city.id}" role="button" tabindex="0" aria-label="Voir le produit ${city.name}">
       <div class="city-page-photo">
         <img src="${city.photo || city.image}" alt="${city.name} Maroc">
       </div>
@@ -168,6 +169,10 @@ function renderSelectedCity() {
 function setCityPage(index) {
   state.cityPageIndex = (index + cities.length) % cities.length;
   renderCityPage();
+}
+
+function scrollToSelectedProduct() {
+  featuredSection.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function renderCart() {
@@ -284,7 +289,7 @@ function selectCity(cityId) {
   state.selectedCity = city;
   state.cityPageIndex = cities.findIndex((item) => item.id === cityId);
   renderAll();
-  document.querySelector("#featured").scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToSelectedProduct();
 }
 
 function openLayer(selector) {
@@ -330,7 +335,7 @@ function renderAll() {
 }
 
 document.addEventListener("click", (event) => {
-  const target = event.target.closest("button, a");
+  const target = event.target.closest("button, a, [data-view-city]");
   if (!target) return;
 
   if (target.matches("[data-open-menu]")) openLayer("[data-menu]");
@@ -366,6 +371,15 @@ document.addEventListener("click", (event) => {
       else closeLayer("[data-checkout]");
     }
   }
+});
+
+document.addEventListener("keydown", (event) => {
+  const target = event.target.closest("[data-view-city]");
+  if (!target || target.matches("button, a")) return;
+  if (event.key !== "Enter" && event.key !== " ") return;
+
+  event.preventDefault();
+  selectCity(target.dataset.viewCity);
 });
 
 checkoutForm.addEventListener("submit", (event) => {

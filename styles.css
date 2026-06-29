@@ -325,6 +325,12 @@ h1 {
   border: 1px solid var(--line);
   background: var(--white);
   box-shadow: 0 22px 70px rgba(17, 35, 29, 0.08);
+  cursor: pointer;
+}
+
+.city-page:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 6px;
 }
 
 .city-page-photo {
@@ -609,6 +615,7 @@ h1 {
   gap: clamp(24px, 5vw, 74px);
   align-items: center;
   background: #eef3ed;
+  scroll-margin-top: 110px;
 }
 
 .featured-copy p {
