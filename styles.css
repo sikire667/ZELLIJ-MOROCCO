@@ -85,11 +85,21 @@ button {
   justify-content: flex-end;
 }
 
-.brand img {
-  display: block;
-  width: clamp(145px, 15vw, 220px);
-  height: auto;
-  background: #ffffff !important;
+.brand-wordmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(145px, 15vw, 220px);
+  min-height: 54px;
+  padding: 8px 18px;
+  border: 1px solid rgba(15, 75, 61, 0.28);
+  color: var(--green);
+  background: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 3vw, 42px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .link-button,
@@ -588,6 +598,16 @@ h1 {
   object-fit: cover;
 }
 
+.product-visual {
+  min-height: 178px;
+  background: #f7f4ec;
+}
+
+.product-visual img {
+  object-fit: contain;
+  padding: 4px;
+}
+
 .city-visual span {
   z-index: 1;
   font-family: Georgia, "Times New Roman", serif;
@@ -785,8 +805,10 @@ h1 {
 }
 
 .footer-logo {
-  width: 170px;
-  padding: 6px;
+  width: fit-content;
+  min-width: 170px;
+  margin-bottom: 14px;
+  color: var(--green);
   background: var(--paper);
 }
 
@@ -1268,8 +1290,11 @@ h1 {
     padding: 10px 14px;
   }
 
-  .brand img {
-    width: 132px;
+  .brand-wordmark {
+    min-width: 132px;
+    min-height: 42px;
+    padding: 7px 12px;
+    font-size: 25px;
   }
 
   .cart-button {

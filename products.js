@@ -27,8 +27,8 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/casablanca-tee.png",
     photo: "assets/cities/casablanca.jpg",
     pageTitle: "La ville blanche, l'energie qui ne dort jamais.",
-    pageDescription: "Casablanca represente le Maroc moderne: business, ocean, mosquee Hassan II et rythme urbain. Pour ZELLIJ, c'est la ville du depart, celle qui transforme la fierte culturelle en piece forte du quotidien.",
-    product: makeProduct("casablanca", "Casablanca", "T-shirt ecru avec visuel Casablanca au dos, logo ZELLIJ au col et impression coeur cote face."),
+    pageDescription: "Casablanca represente le Maroc moderne: business, ocean, mosquee Hassan II et rythme urbain. Pour ZELLYJ, c'est la ville du depart, celle qui transforme la fierte culturelle en piece forte du quotidien.",
+    product: makeProduct("casablanca", "Casablanca", "T-shirt ecru avec visuel Casablanca au dos, logo ZELLYJ au col et impression coeur cote face."),
     story: "La ville blanche, le rythme urbain et l'architecture iconique. Une piece forte pour ceux qui portent Casablanca comme une energie."
   },
   {
@@ -57,7 +57,7 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/tanger-tee.png",
     photo: "assets/cities/tanger.jpg",
     pageTitle: "La porte du nord, entre deux mers.",
-    pageDescription: "Tanger est une ville de passage et de melange: port, falaise, cafe, voyage et mouvement. ZELLIJ la traduit comme une capsule ouverte sur le monde, elegante et un peu nocturne.",
+    pageDescription: "Tanger est une ville de passage et de melange: port, falaise, cafe, voyage et mouvement. ZELLYJ la traduit comme une capsule ouverte sur le monde, elegante et un peu nocturne.",
     product: makeProduct("tanger", "Tanger", "T-shirt ecru inspire du phare, de la cote et de l'esprit voyageur de Tanger."),
     story: "Tanger comme point de passage: Europe, Afrique, mer et mouvement."
   },
@@ -87,7 +87,7 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/fes-tee.png",
     photo: "assets/cities/fes.jpg",
     pageTitle: "La capitale du detail et du savoir-faire.",
-    pageDescription: "Fes, c'est l'artisanat, les portes monumentales, la medina et le geste transmis. Pour ZELLIJ, cette ville donne la profondeur: motifs, patience, heritage et precision graphique.",
+    pageDescription: "Fes, c'est l'artisanat, les portes monumentales, la medina et le geste transmis. Pour ZELLYJ, cette ville donne la profondeur: motifs, patience, heritage et precision graphique.",
     product: makeProduct("fes", "Fes", "T-shirt ecru avec porte monumentale, medina et accents cuivre pour l'heritage artisanal."),
     story: "Fes porte l'artisanat, le detail et la profondeur historique de la medina."
   },
@@ -117,7 +117,7 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/rabat-tee.png",
     photo: "assets/cities/rabat.jpg",
     pageTitle: "La capitale calme, droite et elegante.",
-    pageDescription: "Rabat est plus minimaliste: Tour Hassan, lignes nettes, institutions, jardins et ocean proche. Dans ZELLIJ, elle devient une capsule propre, equilibree et mature.",
+    pageDescription: "Rabat est plus minimaliste: Tour Hassan, lignes nettes, institutions, jardins et ocean proche. Dans ZELLYJ, elle devient une capsule propre, equilibree et mature.",
     product: makeProduct("rabat", "Rabat", "T-shirt ecru avec Tour Hassan, lignes calmes et palette verte institutionnelle."),
     story: "Rabat est plus minimaliste: lignes nettes, capitale calme, culture institutionnelle."
   },
@@ -147,7 +147,7 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/dakhla-tee.png",
     photo: "assets/cities/dakhla.png",
     pageTitle: "La lagune, le desert et l'horizon.",
-    pageDescription: "Dakhla donne une dimension internationale a ZELLIJ: kitesurf, lagune turquoise, sable et liberte. C'est la capsule du voyage, du sport et des grands espaces.",
+    pageDescription: "Dakhla donne une dimension internationale a ZELLYJ: kitesurf, lagune turquoise, sable et liberte. C'est la capsule du voyage, du sport et des grands espaces.",
     product: makeProduct("dakhla", "Dakhla", "T-shirt ecru avec lagune, kitesurf, palmiers et horizon desertique."),
     story: "Dakhla parle d'horizon, de sport, de lagune et de desert sans fin."
   },
@@ -177,7 +177,7 @@ window.ZELLIJ_CITIES = [
     image: "assets/products/laayoune-tee.png",
     photo: "assets/cities/laayoune.jpg",
     pageTitle: "Le souffle du Sahara, fier et lumineux.",
-    pageDescription: "Laayoune ajoute une energie saharienne a ZELLIJ: horizon large, sable chaud, palmiers et fierte du sud. Cette capsule parle de territoire, de calme puissant et de presence marocaine.",
+    pageDescription: "Laayoune ajoute une energie saharienne a ZELLYJ: horizon large, sable chaud, palmiers et fierte du sud. Cette capsule parle de territoire, de calme puissant et de presence marocaine.",
     product: makeProduct("laayoune", "Laayoune", "T-shirt ecru avec dunes, horizon saharien et lumiere chaude du sud marocain."),
     story: "Laayoune ouvre la collection vers le Sahara: sable, horizon, fierte du sud et graphisme solaire."
   }

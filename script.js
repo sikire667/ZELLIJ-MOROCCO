@@ -56,14 +56,14 @@ function renderCityNav() {
 function renderCityGrid() {
   cityGrid.innerHTML = cities.map((city, index) => `
     <article class="city-card ${city.id === state.selectedCity.id ? "is-active" : ""}" ${cityPattern(city)}>
-      <button type="button" data-select-city="${city.id}" aria-label="Voir la rubrique ${city.name}">
+      <button type="button" data-select-city="${city.id}" aria-label="Voir le produit ${city.name}">
         <span class="city-number">${String(index + 1).padStart(2, "0")}</span>
-        <span class="city-visual">
-          ${city.photo || city.image ? `<img src="${city.photo || city.image}" alt="${city.name} Maroc">` : `<span>${city.arabic}</span>`}
+        <span class="city-visual product-visual">
+          ${city.image || city.photo ? `<img src="${city.image || city.photo}" alt="T-shirt ${city.name}">` : `<span>${city.arabic}</span>`}
         </span>
         <span class="city-meta">
-          <strong>${city.name}</strong>
-          <small>${city.region}</small>
+          <strong>${city.product?.name || city.name}</strong>
+          <small>${city.name} / ${city.region}</small>
         </span>
         <span class="city-status">${city.status}</span>
       </button>
@@ -110,6 +110,8 @@ function renderCityPage() {
 }
 
 function renderTimeline() {
+  if (!timeline) return;
+
   timeline.innerHTML = cities.map((city, index) => `
     <button class="timeline-item ${city.id === state.selectedCity.id ? "is-active" : ""}" type="button" data-select-city="${city.id}">
       <span class="timeline-number">${String(index + 1).padStart(2, "0")}</span>
@@ -237,7 +239,7 @@ function buildCheckoutEmailBody(form) {
   const data = new FormData(form);
   const totals = getOrderTotals();
   const lines = [
-    "Nouvelle commande ZELLIJ",
+    "Nouvelle commande ZELLYJ",
     "",
     "CLIENT",
     `Prenom: ${data.get("first_name") || ""}`,
